@@ -1,0 +1,59 @@
+/* Netflix Sinhala Subtitles Extension - Styles */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+#custom-subtitle-container {
+  font-family: 'Noto Sans Sinhala', Arial, sans-serif;
+}
+
+#custom-subtitle {
+  white-space: pre-line;
+}
+
+/* Fullscreen mode support */
+*:fullscreen #custom-subtitle-container,
+*:-webkit-full-screen #custom-subtitle-container,
+*:-moz-full-screen #custom-subtitle-container,
+*:-ms-fullscreen #custom-subtitle-container {
+  position: absolute !important;
+  z-index: 2147483647 !important;
+}
+
+*:fullscreen #custom-subtitle,
+*:-webkit-full-screen #custom-subtitle,
+*:-moz-full-screen #custom-subtitle,
+*:-ms-fullscreen #custom-subtitle {
+  z-index: 2147483647 !important;
+}
+
+/* Button hover effect */
+#subtitle-upload-button button:hover {
+  background-color: #f40612 !important;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+#subtitle-upload-button button:active {
+  transform: scale(0.98);
+}
+

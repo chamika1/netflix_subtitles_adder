@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Sinhala Subtitles</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color: white;
+      margin: 0;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      margin: 0 0 5px 0;
+      color: #e50914;
+    }
+
+    .header p {
+      margin: 0;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .section h2 {
+      font-size: 14px;
+      margin: 0 0 10px 0;
+      color: #e50914;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .info-label {
+      color: #ccc;
+    }
+
+    .info-value {
+      color: white;
+      font-weight: bold;
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .status-active {
+      background-color: #4CAF50;
+    }
+
+    .status-inactive {
+      background-color: #f44336;
+    }
+
+    .button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 10px;
+    }
+
+    .button-primary {
+      background-color: #e50914;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: #f40612;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+    }
+
+    .button-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .button-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .instructions {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px;
+      border-radius: 5px;
+      border-left: 3px solid #e50914;
+    }
+
+    .instructions strong {
+      color: white;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎬 Netflix Sinhala Subtitles</h1>
+    <p>Custom subtitle extension for Netflix</p>
+  </div>
+
+  <div class="section">
+    <h2>Status</h2>
+    <div class="info-item">
+      <span class="info-label">Extension Status:</span>
+      <span class="info-value">
+        <span class="status-indicator status-active"></span>
+        Active
+      </span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">Subtitles Loaded:</span>
+      <span class="info-value" id="subtitles-status">None</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>How to Use</h2>
+    <div class="instructions">
+      <strong>1.</strong> Open any Netflix video<br>
+      <strong>2.</strong> Click "Load Sinhala Subtitles" button (top-right)<br>
+      <strong>3.</strong> Select your .srt or .vtt subtitle file<br>
+      <strong>4.</strong> Enjoy your movie with Sinhala subtitles!
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Quick Actions</h2>
+    <button class="button button-primary" id="open-netflix">
+      Open Netflix
+    </button>
+    <button class="button button-secondary" id="help">
+      📖 Help & Support
+    </button>
+  </div>
+
+  <div class="footer">
+    Version 1.0.3 | Made with ❤️ for Sinhala speakers
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
