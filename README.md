@@ -28,7 +28,7 @@ A Chrome extension that allows you to add custom Sinhala subtitles to Netflix vi
 
 4. **Load the Extension**
    - Click "Load unpacked" button
-   - Select the folder containing the extension files (where `manifest.json` is located)
+   - Select the `extension` folder (where `manifest.json` is located)
 
 5. **Verify Installation**
    - You should see "Netflix Sinhala Subtitles" extension card
@@ -124,15 +124,21 @@ This usually means the subtitle file doesn't match the Netflix video version. Tr
 
 ```
 netflix-sinhala-subtitles/
-├── manifest.json          # Extension configuration
-├── content.js            # Main extension logic
-├── styles.css            # Subtitle styling
-├── popup.html            # Extension popup UI
-├── popup.js              # Popup functionality
-├── icon16.png            # Extension icon (16x16)
-├── icon48.png            # Extension icon (48x48)
-├── icon128.png           # Extension icon (128x128)
-└── README.md             # This file
+├── extension/              # Chrome extension files
+│   ├── manifest.json      # Extension configuration
+│   ├── content.js         # Main extension logic
+│   ├── styles.css         # Subtitle styling
+│   ├── popup.html         # Extension popup UI
+│   ├── popup.js           # Popup functionality
+│   ├── subtitle-parser.js # Subtitle parsing logic
+│   ├── icon16.png         # Extension icon (16x16)
+│   ├── icon48.png         # Extension icon (48x48)
+│   └── icon128.png        # Extension icon (128x128)
+├── create-icons.html       # Utility to generate icons
+├── package-extension.bat   # Script to package extension as zip
+├── sample-subtitle.srt     # Sample subtitle file for testing
+├── README.md              # This file
+└── Documentation files    # Installation guides, troubleshooting, etc.
 ```
 
 ## 🔧 Technical Details

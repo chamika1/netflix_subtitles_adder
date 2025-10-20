@@ -8,7 +8,7 @@ echo ==========================================
 echo.
 
 REM Check if icons exist
-if not exist "icon16.png" (
+if not exist "extension\icon16.png" (
     echo [WARNING] icon16.png not found!
     echo Please generate icons using create-icons.html first.
     echo.
@@ -16,7 +16,7 @@ if not exist "icon16.png" (
     exit /b 1
 )
 
-if not exist "icon48.png" (
+if not exist "extension\icon48.png" (
     echo [WARNING] icon48.png not found!
     echo Please generate icons using create-icons.html first.
     echo.
@@ -24,7 +24,7 @@ if not exist "icon48.png" (
     exit /b 1
 )
 
-if not exist "icon128.png" (
+if not exist "extension\icon128.png" (
     echo [WARNING] icon128.png not found!
     echo Please generate icons using create-icons.html first.
     echo.
@@ -50,7 +50,7 @@ if exist "%ZIPNAME%" (
 )
 
 REM Create zip using PowerShell (Windows 10+)
-powershell -command "Compress-Archive -Path manifest.json,content.js,popup.html,popup.js,styles.css,subtitle-parser.js,icon16.png,icon48.png,icon128.png,README.md -DestinationPath %ZIPNAME%"
+powershell -command "Compress-Archive -Path extension\manifest.json,extension\content.js,extension\popup.html,extension\popup.js,extension\styles.css,extension\subtitle-parser.js,extension\icon16.png,extension\icon48.png,extension\icon128.png,README.md -DestinationPath %ZIPNAME%"
 
 if exist "%ZIPNAME%" (
     echo.
