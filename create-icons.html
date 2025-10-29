@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Extension Icons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #e50914;
+    }
+    .icons {
+      display: flex;
+      gap: 20px;
+      margin: 30px 0;
+      justify-content: center;
+    }
+    .icon-box {
+      text-align: center;
+    }
+    canvas {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background: #e50914;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 5px;
+    }
+    button:hover {
+      background: #f40612;
+    }
+    .instructions {
+      background: #f9f9f9;
+      padding: 15px;
+      border-left: 3px solid #e50914;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Netflix Sinhala Subtitles - Icon Generator</h1>
+    <p>Click the buttons below to download the extension icons:</p>
+    
+    <div class="icons">
+      <div class="icon-box">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <p>16x16</p>
+        <button onclick="downloadIcon('icon16', 'icon16.png')">Download</button>
+      </div>
+      <div class="icon-box">
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <p>48x48</p>
+        <button onclick="downloadIcon('icon48', 'icon48.png')">Download</button>
+      </div>
+      <div class="icon-box">
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <p>128x128</p>
+        <button onclick="downloadIcon('icon128', 'icon128.png')">Download</button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3>Instructions:</h3>
+      <ol>
+        <li>Open this HTML file in your browser</li>
+        <li>Click each "Download" button to save the icon files</li>
+        <li>Save all three icon files in the same folder as your extension</li>
+        <li>The icons should be named: icon16.png, icon48.png, icon128.png</li>
+      </ol>
+      <p><strong>Note:</strong> These are simple placeholder icons. For a more professional look, consider creating custom icons using design software like Figma, Photoshop, or online tools.</p>
+    </div>
+  </div>
+
+  <script>
+    // Function to draw icon on canvas
+    function drawIcon(canvasId, size) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      
+      // Background
+      ctx.fillStyle = '#e50914';
+      ctx.fillRect(0, 0, size, size);
+      
+      // Text
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.5}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      
+      // Draw "සි" (Sinhala "Si") or subtitle symbol
+      if (size >= 48) {
+        ctx.font = `bold ${size * 0.6}px Arial`;
+        ctx.fillText('📝', size / 2, size / 2);
+      } else {
+        ctx.font = `bold ${size * 0.7}px Arial`;
+        ctx.fillText('S', size / 2, size / 2);
+      }
+    }
+
+    // Function to download icon
+    function downloadIcon(canvasId, filename) {
+      const canvas = document.getElementById(canvasId);
+      const url = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = url;
+      link.click();
+    }
+
+    // Draw all icons on page load
+    window.onload = function() {
+      drawIcon('icon16', 16);
+      drawIcon('icon48', 48);
+      drawIcon('icon128', 128);
+    };
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+# Netflix Sinhala Subtitles Extension - Git Ignore
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.bak
+*.log
+
+# Subtitle Files (users' personal files)
+*.srt
+*.vtt
+!sample-subtitle.srt
+
+# Icon backups
+icon*.png.backup
+
+# Zip archives
+*.zip
+*.crx
+
+# Node modules (if you add build tools later)
+node_modules/
+
+# Build outputs
+dist/
+build/
+
